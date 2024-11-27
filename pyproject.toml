@@ -36,14 +36,14 @@ classifiers = [
 
 [project.optional-dependencies]
 tf208-gpu = [
-    "tensorflow-gpu~=2.8.3",
+    "tensorflow-gpu~=2.8.4",
 ]
 tf216-gpu = [
     "tensorflow[and-cuda]~=2.16.2",
     "tf-keras~=2.16.0"
 ]
 tf217-gpu = [
-    "tensorflow[and-cuda]~=2.17.0",
+    "tensorflow[and-cuda]~=2.17.1",
     "tf-keras~=2.17.0"
 ]
 tf218-gpu = [
@@ -51,14 +51,14 @@ tf218-gpu = [
     "tf-keras~=2.18.0"
 ]
 tf208-cpu = [
-    "tensorflow~=2.8.3",
+    "tensorflow~=2.8.4",
 ]
 tf216-cpu = [
-    "tensorflow~=2.16.0",
+    "tensorflow~=2.16.2",
     "tf-keras~=2.16.0"
 ]
 tf217-cpu = [
-    "tensorflow~=2.17.0",
+    "tensorflow~=2.17.1",
     "tf-keras~=2.17.0"
 ]
 tf218-cpu = [
