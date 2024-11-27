@@ -7,25 +7,15 @@ authors = [
 ]
 readme = "README.md"
 dependencies = [
-    "colorlog",
-    "hydra_colorlog",
-    "hydra-core",
-    "ipykernel",
-    "lightning",
-    "matplotlib",
-    "numpy",
-    "omegaconf",
-    "pandas[parquet,performance]>=2.2.0",
-    "plotly",
-    "scikit-learn",
-    "seaborn",
-    "tensorboard",
-    "torch",
-    "torchvision",
+    "albumentations",
+    "bayesian-optimization",
+    "hdbscan",
+    "opencv-python-headless",
+    "pillow",
+    "segmentation-models",
     "tqdm",
-    "typer",
 ]
-requires-python = ">=3.11, <4.0"
+requires-python = ">=3.10, <4.0"
 keywords = [
     "artificial intelligence",
     "python",
@@ -45,6 +35,36 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
+tf208-gpu = [
+    "tensorflow-gpu~=2.8.3",
+]
+tf216-gpu = [
+    "tensorflow[and-cuda]~=2.16.0",
+    "tf-keras~=2.16.0"
+]
+tf217-gpu = [
+    "tensorflow[and-cuda]~=2.17.0",
+    "tf-keras~=2.17.0"
+]
+tf218-gpu = [
+    "tensorflow[and-cuda]~=2.18.0",
+    "tf-keras~=2.18.0"
+]
+tf208-cpu = [
+    "tensorflow~=2.8.3",
+]
+tf216-cpu = [
+    "tensorflow~=2.16.0",
+    "tf-keras~=2.16.0"
+]
+tf217-cpu = [
+    "tensorflow~=2.17.0",
+    "tf-keras~=2.17.0"
+]
+tf218-cpu = [
+    "tensorflow~=2.18.0",
+    "tf-keras~=2.18.0"
+]
 dev = [
     "coverage",
     "coverage-badge",
@@ -110,6 +130,18 @@ dev-dependencies = [
     "pytest-html",
     "pre-commit",
     "safety",
+]
+conflicts = [
+  [
+    { extra = "tf208-gpu" },
+    { extra = "tf216-gpu" },
+    { extra = "tf217-gpu" },
+    { extra = "tf218-gpu" },
+    { extra = "tf208-cpu" },
+    { extra = "tf216-cpu" },
+    { extra = "tf217-cpu" },
+    { extra = "tf218-cpu" },
+  ],
 ]
 
 [tool.uv.pip]
