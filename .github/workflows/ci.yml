@@ -19,7 +19,7 @@ jobs:
       matrix:
         tf-version: ['tf208-cpu', 'tf216-cpu', 'tf217-cpu', 'tf218-cpu']
         python-version: ['3.10', '3.12']
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
         exclude:
           # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
