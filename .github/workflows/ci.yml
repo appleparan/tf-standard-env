@@ -23,6 +23,7 @@ jobs:
         exclude:
           # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
+            os: macos-latest
             python-version: '3.12'
         include:
           # tf216~은 Python 3.12에서만 동작
@@ -67,16 +68,22 @@ jobs:
         python-version: ['3.10', '3.12']
         os: [ubuntu-latest, macos-latest]
         exclude:
-          # tf208은 Python 3.12와 호환되지 않음
+          # tf208-cpu와 python 3.12 조합 제외
           - tf-version: 'tf208-cpu'
             python-version: '3.12'
-        include:
+            os: macos-latest
+          # tf216-cpu, tf217-cpu, tf218-cpu와 python 3.10 조합 제외
           - tf-version: 'tf216-cpu'
-            python-version: '3.12'
+            python-version: '3.10'
           - tf-version: 'tf217-cpu'
-            python-version: '3.12'
+            python-version: '3.10'
           - tf-version: 'tf218-cpu'
-            python-version: '3.12'
+            python-version: '3.10'
+        include:
+          # tf208-cpu는 python 3.10, os ubuntu-latest에서만 실행
+          - tf-version: 'tf208-cpu'
+            python-version: '3.10'
+            os: ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out repository
