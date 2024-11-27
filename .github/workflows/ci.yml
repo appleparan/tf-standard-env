@@ -24,7 +24,6 @@ jobs:
           # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
             os: macos-latest
-            python-version: ['3.10', '3.12']
           - tf-version: 'tf208-cpu'
             os: ubuntu-latest
             python-version: '3.12'
@@ -47,7 +46,7 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Install the project
-        run: uv sync --dev --extra ${{ matrix.tf-version }}
+        run: uv sync --extra ${{ matrix.tf-version }} --dev
 
       - name: Format
         run: |
@@ -69,22 +68,19 @@ jobs:
         python-version: ['3.10', '3.12']
         os: [ubuntu-latest, macos-latest]
         exclude:
-          # tf208-cpu와 python 3.12 조합 제외
+          # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
-            python-version: '3.12'
             os: macos-latest
-          # tf216-cpu, tf217-cpu, tf218-cpu와 python 3.10 조합 제외
+            python-version: ['3.10', '3.12']
+          - tf-version: 'tf208-cpu'
+            os: ubuntu-latest
+            python-version: '3.12'
           - tf-version: 'tf216-cpu'
             python-version: '3.10'
           - tf-version: 'tf217-cpu'
             python-version: '3.10'
           - tf-version: 'tf218-cpu'
             python-version: '3.10'
-        include:
-          # tf208-cpu는 python 3.10, os ubuntu-latest에서만 실행
-          - tf-version: 'tf208-cpu'
-            python-version: '3.10'
-            os: ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out repository
@@ -99,7 +95,7 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Install the project
-        run: uv sync --dev --extra ${{ matrix.tf-version }}
+        run: uv sync --extra ${{ matrix.tf-version }} --dev
 
       - name: Run tests
         run: |
