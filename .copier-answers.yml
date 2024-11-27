@@ -1,0 +1,24 @@
+# Changes here will be overwritten by Copier
+_commit: v0.5.1
+_src_path: ./copier-modern-ml
+author_email: jongsukim8@gmail.com
+author_fullname: Jongsu Kim
+ci: github
+configs_dir: configs
+copyright_date: '2024'
+copyright_holder: Jongsu Kim
+copyright_holder_email: jongsukim8@gmail.com
+copyright_license: Apache License 2.0
+data_dir: data
+examples_dir: examples
+models_dir: models
+native_tls: false
+notebooks_dir: notebooks
+package: true
+project_description: 'test tf '
+project_name: tf_test
+project_slug: tf_test
+references_dir: references
+reports_dir: reports
+version: 0.1.0
+
