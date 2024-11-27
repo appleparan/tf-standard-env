@@ -21,7 +21,6 @@ jobs:
         python-version: ['3.10', '3.12']
         os: [ubuntu-latest, macos-latest]
         exclude:
-          # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
             os: macos-latest
           - tf-version: 'tf208-cpu'
@@ -68,10 +67,8 @@ jobs:
         python-version: ['3.10', '3.12']
         os: [ubuntu-latest, macos-latest]
         exclude:
-          # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
             os: macos-latest
-            python-version: ['3.10', '3.12']
           - tf-version: 'tf208-cpu'
             os: ubuntu-latest
             python-version: '3.12'
