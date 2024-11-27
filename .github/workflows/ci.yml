@@ -17,13 +17,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tf-version: ['tf208-cpu', 'tf216-cpu', 'tf217-cpu', 'tf218-cpu']
+        tf-version: ['tf210-cpu', 'tf216-cpu', 'tf217-cpu', 'tf218-cpu']
         python-version: ['3.10', '3.12']
         os: [ubuntu-latest, macos-latest]
         exclude:
-          - tf-version: 'tf208-cpu'
+          - tf-version: 'tf210-cpu'
             os: macos-latest
-          - tf-version: 'tf208-cpu'
+          - tf-version: 'tf210-cpu'
             os: ubuntu-latest
             python-version: '3.12'
           - tf-version: 'tf216-cpu'
@@ -63,13 +63,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tf-version: ['tf208-cpu', 'tf216-cpu', 'tf217-cpu', 'tf218-cpu']
+        tf-version: ['tf210-cpu', 'tf216-cpu', 'tf217-cpu', 'tf218-cpu']
         python-version: ['3.10', '3.12']
         os: [ubuntu-latest, macos-latest]
         exclude:
-          - tf-version: 'tf208-cpu'
+          - tf-version: 'tf210-cpu'
             os: macos-latest
-          - tf-version: 'tf208-cpu'
+          - tf-version: 'tf210-cpu'
             os: ubuntu-latest
             python-version: '3.12'
           - tf-version: 'tf216-cpu'

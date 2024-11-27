@@ -35,8 +35,8 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-tf208-gpu = [
-    "tensorflow-gpu~=2.8.4",
+tf210-gpu = [
+    "tensorflow~=2.10.1",
 ]
 tf216-gpu = [
     "tensorflow[and-cuda]~=2.16.2",
@@ -50,8 +50,8 @@ tf218-gpu = [
     "tensorflow[and-cuda]~=2.18.0",
     "tf-keras~=2.18.0"
 ]
-tf208-cpu = [
-    "tensorflow~=2.8.4",
+tf210-cpu = [
+    "tensorflow~=2.10.1",
 ]
 tf216-cpu = [
     "tensorflow~=2.16.2",
@@ -64,26 +64,6 @@ tf217-cpu = [
 tf218-cpu = [
     "tensorflow~=2.18.0",
     "tf-keras~=2.18.0"
-]
-dev = [
-    "coverage",
-    "coverage-badge",
-    "git-changelog",
-    "mkdocs",
-    "mkdocs-material",
-    "mkdocstrings[python]",
-    "mkdocs-gen-files",
-    "mkdocs-section-index",
-    "mkdocs-literate-nav",
-    "mypy",
-    "mypy-extensions",
-    "myst-parser",
-    "ruff",
-    "pytest",
-    "pytest-cov",
-    "pytest-html",
-    "pre-commit",
-    "safety",
 ]
 doc = [
     "mkdocs",
@@ -115,6 +95,7 @@ managed = true
 dev-dependencies = [
     "coverage",
     "coverage-badge",
+    "git-changelog",
     "mkdocs",
     "mkdocs-material",
     "mkdocstrings[python]",
@@ -133,11 +114,11 @@ dev-dependencies = [
 ]
 conflicts = [
   [
-    { extra = "tf208-gpu" },
+    { extra = "tf210-gpu" },
     { extra = "tf216-gpu" },
     { extra = "tf217-gpu" },
     { extra = "tf218-gpu" },
-    { extra = "tf208-cpu" },
+    { extra = "tf210-cpu" },
     { extra = "tf216-cpu" },
     { extra = "tf217-cpu" },
     { extra = "tf218-cpu" },
