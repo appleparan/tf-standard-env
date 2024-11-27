@@ -24,15 +24,16 @@ jobs:
           # tf208,은 Python 3.12와 호환되지 않음
           - tf-version: 'tf208-cpu'
             os: macos-latest
+            python-version: ['3.10', '3.12']
+          - tf-version: 'tf208-cpu'
+            os: ubuntu-latest
             python-version: '3.12'
-        include:
-          # tf216~은 Python 3.12에서만 동작
           - tf-version: 'tf216-cpu'
-            python-version: '3.12'
+            python-version: '3.10'
           - tf-version: 'tf217-cpu'
-            python-version: '3.12'
+            python-version: '3.10'
           - tf-version: 'tf218-cpu'
-            python-version: '3.12'
+            python-version: '3.10'
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
