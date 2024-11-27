@@ -39,7 +39,7 @@ tf208-gpu = [
     "tensorflow-gpu~=2.8.3",
 ]
 tf216-gpu = [
-    "tensorflow[and-cuda]~=2.16.0",
+    "tensorflow[and-cuda]~=2.16.2",
     "tf-keras~=2.16.0"
 ]
 tf217-gpu = [
